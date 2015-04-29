@@ -111,7 +111,8 @@ def get_a_tweet(query, credentials):
         text = tweet['text']
         if "@" in text:
             continue  # No spamming
-        kept.append(text)
+        if "jif" in text.lower() and "gif" in text.lower():
+            kept.append(text)
 
     print("Tweets kept:", len(kept))
     if kept:
